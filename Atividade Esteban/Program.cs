@@ -2,23 +2,22 @@
 
 public class BuscaSequencial
 {
-    public static int BuscarElemento(int[] array, int elemento)
+    public static int BuscarNome(string[] nomes, string nome)
     {
-        for (int i = 0; i < array.Length; i++)
+        for (int i = 0; i < nomes.Length; i++)
         {
-            if (array[i] == elemento)
+            if (nomes[i] == nome)
                 return i;
         }
-        return -1; // Retorna -1 se não encontrar
+        return -1;
     }
 
     public static void Main()
     {
-        int[] arr = { 1, 3, 5, 7, 9 };
-        int elemento = 7;
-        int indice = BuscarElemento(arr, elemento);
+        string[] nomes = { "Ana", "Carlos", "Mariana", "João" };
+        string nomeBusca = "Mariana";
+        int indice = BuscarNome(nomes, nomeBusca);
 
-        Console.WriteLine(indice == -1 ? "Elemento não encontrado" : $"Elemento encontrado no índice {indice}");
+        Console.WriteLine(indice == -1 ? "Nome não encontrado" : $"Nome encontrado no índice {indice}");
     }
 }
-
