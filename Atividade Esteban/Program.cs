@@ -2,23 +2,23 @@
 
 public class BuscaSequencial
 {
-    public static int ContarOcorrencias(int[] array, int elemento)
+    public static int BuscarElemento(int[] array, int elemento)
     {
-        int contador = 0;
         for (int i = 0; i < array.Length; i++)
         {
             if (array[i] == elemento)
-                contador++;
+                return i;
         }
-        return contador;
+        return -1; // Retorna -1 se não encontrar
     }
 
     public static void Main()
     {
-        int[] arr = { 1, 3, 5, 3, 7, 3 };
-        int elemento = 3;
-        int ocorrencias = ContarOcorrencias(arr, elemento);
+        int[] arr = { 1, 3, 5, 7, 9 };
+        int elemento = 7;
+        int indice = BuscarElemento(arr, elemento);
 
-        Console.WriteLine($"O número {elemento} aparece {ocorrencias} vezes.");
+        Console.WriteLine(indice == -1 ? "Elemento não encontrado" : $"Elemento encontrado no índice {indice}");
     }
 }
+
